@@ -1,0 +1,130 @@
+ /* analog &stopwatch combined code */
+ 
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #ffffff;
+   
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   background-color: rgba(250, 235, 215, 0.886);
+   flex-direction: column;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    background-color: rgba(10, 72, 96, 0.751);
+    text-align: center;
+    padding: 10px;
+}
+
+/* analog css code */
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(10, 72, 96, 0.751);
+    border: 8px solid  rgba(5, 74, 101, 0.726);
+    box-shadow: -4px -4px 10px  rgba(157, 178, 186, 0.892),
+                inset 4px 4px 10px  rgba(5, 47, 64, 0.792),
+                inset -4px -4px 10px rgba(5, 47, 64, 0.792),
+                4px 4px 10px  rgba(153, 172, 180, 0.792);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); 
+    inset: 12px;
+    text-align: center;
+    padding: 10px;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+.time{
+     color: rgba(218, 85, 37, 0.772);
+    
+}
+.analog{
+    position: absolute;
+}
+#btn{
+    margin: 450px 50px 10px 50px;
+    border-width: 0cm;
+    background-color: rgba(250, 235, 215, 0.886);
+}
+
+
+/*stopwatch css code*/
+.stopwatch{
+    background-color: rgba(10, 72, 96, 0.751);
+    padding: 20px 50px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.timerDisplay{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.btn{
+    font-size: 20px;
+    height: 50px;
+    width: 70px;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 20px 10px 20px 10px;
+    margin-inline: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
